@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.bitacademy.guestbook.vo.GuestbookVo;
 @Repository
 public class GuestbookRepository {
-	public Boolean delete(GuestbookVo vo) {
+	public Boolean deleteByNoAndPassword(Long no, String password) {
 		boolean result = false;
 		
 		Connection conn = null;
@@ -24,8 +24,8 @@ public class GuestbookRepository {
 			
 			String sql = "delete from guestbook where no = ? and password = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setLong(1, vo.getNo());
-			pstmt.setString(2, vo.getPassword());
+			pstmt.setLong(1, no);
+			pstmt.setString(2, password);
 			
 			int count = pstmt.executeUpdate();
 			

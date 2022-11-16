@@ -14,7 +14,7 @@
 <title>방명록</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath() %>/add" method="post">
+	<form action="${pageContext.request.contextPath }/add" method="post">
 		<input type="hidden" name="a" value="add">
 		<table border=1 width=500>
 			<tr>
@@ -25,20 +25,20 @@
 				<td colspan=4><textarea name="contents" cols=60 rows=5></textarea></td>
 			</tr>
 			<tr>
-				<td colspan=4 align=right><input type="submit" VALUE="등록"></td>
+				<td colspan=4 align=right><input type="submit" value="등록"></td>
 			</tr>
 		</table>
 	</form>
 	
 	<c:set var='count' value='${fn:length(list) }' />	
-				<c:forEach items='${list }' var='vo' varStatus='status'>
-		<table width=510 border=1>
+				<c:forEach var='vo' items='${list }'  varStatus='status'>
+		<table width="510" border="1">
 	
 			<tr>
 				<td>[${count-status.index }]</td>
 				<td>${vo.name }</td>
 				<td>${vo.regDate }</td>
-				<td><a href="${pageContext.request.contextPath }/deleteform${vo.no }">삭제</a></td>
+				<td><a href="${pageContext.request.contextPath }/delete/${vo.no }">삭제</a></td>
 			</tr>
 			<tr>
 				<td colspan=4>${fn:replace(vo.contents, newLine,'<br/>') }</td>
