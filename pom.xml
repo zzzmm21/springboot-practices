@@ -10,5 +10,7 @@
 		<module>guestbook03</module>
 		<module>logex</module>
 		<module>fileupload</module>
+		<module>aoptest</module>
+		<module>contrainer</module>
 	</modules>
 </project>
