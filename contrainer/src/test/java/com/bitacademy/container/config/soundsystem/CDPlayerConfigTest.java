@@ -12,7 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.bitacademy.container.soundsystem.CDPlayer;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes= {CDPlayerConfig.class})
+@ContextConfiguration(classes={CDPlayerConfig.class})
 public class CDPlayerConfigTest {
 	@Autowired
 	private CDPlayer cdPlayer;
