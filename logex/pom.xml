@@ -24,6 +24,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
+			<!-- JCL 제외 -->
 			<exclusions>
 				<exclusion>
 					<groupId>commons-logging</groupId>
@@ -31,7 +32,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 
 		<!-- Spring MVC -->
 		<dependency>
@@ -53,6 +53,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+
 		<!-- Logback -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -64,19 +65,20 @@
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
-			<dependency>
+		
+		<!-- servlet -->
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.2</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>		
 	</dependencies>
 
 	<build>
@@ -87,15 +89,6 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.2</version>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<url>${tomcat.deploy.url}</url>
-					<server>tomcat-bitacademy</server>
-				</configuration>
-			</plugin>	
 		</plugins>
 	</build>
 </project>
